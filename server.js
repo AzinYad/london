@@ -27,18 +27,42 @@ app.get("/:city", (req, res) => {
   }
 });
 
-app.get("/:city/pharmacies", (req, res) => {
+app.get("/:city/:category", (req, res) => {
   let cityName = req.params.city.toLocaleLowerCase();
-  if (cityName === "straford") {
+  let category = req.params.category;
+
+  if (cityName === "straford" && category === "pharmacies") {
     res.send(strafordData.pharmacies);
-  } else if (cityName === "harrow") {
+  } else if (cityName === "straford" && category === "colleges") {
+    res.send(strafordData.colleges);
+  } else if (cityName === "straford" && category === "doctors") {
+    res.send(strafordData.doctors);
+  } else if (cityName === "straford" && category === "hospitals") {
+    res.send(strafordData.hospitals);
+  } else if (cityName === "harrow" && category === "pharmacies") {
     res.send(harrowData.pharmacies);
-  } else if (cityName === "heathrow") {
+  } else if (cityName === "harrow" && category === "colleges") {
+    res.send(harrowData.colleges);
+  } else if (cityName === "harrow" && category === "doctors") {
+    res.send(harrowData.doctors);
+  } else if (cityName === "harrow" && category === "hospitals") {
+    res.send(harrowData.hospitals);
+  } else if (cityName === "heathrow" && category === "pharmacies") {
     res.send(heathrowData.pharmacies);
+  } else if (cityName === "heathrow" && category === "colleges") {
+    res.send(heathrowData.colleges);
+  } else if (cityName === "heathrow" && category === "doctors") {
+    res.send(heathrowData.doctors);
+  } else if (cityName === "heathrow" && category === "hospitals") {
+    res.send(heathrowData.hospitals);
   } else {
     res.sendStatus(404);
-  }
+  } 
 });
+
+
+
+
 
 const listener = app.listen(PORT, () => {
   console.log(`listening on port: ${listener.address().port}`);
