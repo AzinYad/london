@@ -4,6 +4,11 @@ const harrowData = require("./data/Harrow.json");
 const heathrowData = require("./data/Heathrow.json");
 const strafordData = require("./data/Stratford.json");
 const PORT = process.env.PORT || 3003;
+const path = require("path");
+
+app.use(express.json());
+app.use(express.static(path.resolve(__dirname, "./client/build")));
+
 
 app.get("/", (req, res) => {
   res.send({
@@ -57,12 +62,8 @@ app.get("/:city/:category", (req, res) => {
     res.send(heathrowData.hospitals);
   } else {
     res.sendStatus(404);
-  } 
+  }
 });
-
-
-
-
 
 const listener = app.listen(PORT, () => {
   console.log(`listening on port: ${listener.address().port}`);
