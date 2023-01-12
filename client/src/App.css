@@ -1,3 +1,48 @@
+.title{
+  margin-top: 1em;
+    text-align: center;
+}
+h2{
+  color: red;
+  text-align: center;
+}
+
+nav{
+  margin-top: 3em;
+  margin-bottom: 2em;
+  padding:.5em;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border: 1px solid black;
+}
+
+.button{
+  margin: .5em;
+  padding: .3em;
+  font-size: 1.3rem;
+  cursor: pointer;
+  border: 1px solid black;
+}
+
+.city-selector{
+  width: 10%;
+  height:2em;
+  text-align: center;
+  font-size: large;
+  border:2px solid black;
+}
+
+.table{
+  margin:2em auto;
+  width: 80%;
+  text-align: center;
+}
+
+th,tr{
+  font-size:1.3rem;
+  height: 2em;
+}
 .App {
   text-align: center;
 }
